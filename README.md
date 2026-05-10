@@ -58,7 +58,6 @@ Accurate prediction of claim likelihood enables smarter premium pricing and bett
 ```
 Data Loading → EDA → Feature Analysis → Preprocessing → Modeling → Evaluation → Insights
 ```
-
 ### Key Steps
 - **EDA** — Explored claim rates across all demographic and behavioral features
 - **Preprocessing** — StandardScaler + OneHotEncoder via ColumnTransformer
