@@ -1,4 +1,6 @@
-<img width="1189" height="390" alt="3" src="https://github.com/user-attachments/assets/0af6af48-7e07-4a5c-ad2f-15d3805ee548" /># 🚗 Car Insurance Claims Prediction
+
+
+# 🚗 Car Insurance Claims Prediction
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
 ![Sklearn](https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge&logo=scikit-learn)
@@ -87,7 +89,7 @@ Data Loading → EDA → Feature Analysis → Preprocessing → Modeling → Eva
 ## 📈 Visualizations
 
 ### Target Distribution
-![Claim Distribution](images/claim_distribution.png)
+![Claim Distribution](<img width="1189" height="390" alt="3" src="https://github.com/user-attachments/assets/0af6af48-7e07-4a5c-ad2f-15d3805ee548" />)
 
 ### Categorical Features vs Claim Rate
 ![Categorical EDA](images/categorical_claim_rates.png)
