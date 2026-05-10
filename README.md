@@ -70,14 +70,14 @@ Data Loading → EDA → Feature Analysis → Preprocessing → Modeling → Eva
 ## 🔑 Key EDA Findings
 
 ### Claim Rate by Driving Experience
-![Driving Experience](images/explanatory_viz_1.png)
+![Driving Experience](1.png)
 
 > Drivers with **0-9 years** of experience have a **62.8%** claim rate —
 > nearly **double the average** of 31.3%.
 > Expert drivers (30y+) have a claim rate of almost **0%**.
 
 ### Claim Rate by Gender
-![Gender Risk](images/gender_claim_rate.png)
+![Gender Risk](2.png)
 
 > Male drivers show a **36.3%** claim rate vs **26.4%** for female drivers —
 > a 10% gap, making gender a statistically significant risk predictor.
