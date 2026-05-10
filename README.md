@@ -88,16 +88,16 @@ Data Loading → EDA → Feature Analysis → Preprocessing → Modeling → Eva
 ## 📈 Visualizations
 
 ### Target Distribution
-![Claim Distribution](<img width="1189" height="390" alt="3" src="https://github.com/user-attachments/assets/0af6af48-7e07-4a5c-ad2f-15d3805ee548" />)
+![Claim Distribution](3.png)
 
 ### Categorical Features vs Claim Rate
-![Categorical EDA](images/categorical_claim_rates.png)
+![Categorical EDA](4.png)
 
 ### Numerical Features vs Claim
-![Numerical EDA](images/numerical_features.png)
+![Numerical EDA](5.png)
 
 ### Top 10 Most Important Features — Permutation Importance
-![Permutation Importance](images/permutation_importance.png)
+![Permutation Importance](تنزيل.png)
 
 ---
 
