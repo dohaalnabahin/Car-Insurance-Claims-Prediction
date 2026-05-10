@@ -91,10 +91,10 @@ Data Loading → EDA → Feature Analysis → Preprocessing → Modeling → Eva
 ![Claim Distribution](3.png)
 
 ### Categorical Features vs Claim Rate
-![Categorical EDA](4.png)
+![Categorical EDA](5.png)
 
 ### Numerical Features vs Claim
-![Numerical EDA](5.png)
+![Numerical EDA](4.png)
 
 ### Top 10 Most Important Features — Permutation Importance
 ![Permutation Importance](تنزيل.png)
