@@ -61,7 +61,6 @@ Data Loading → EDA → Feature Analysis → Preprocessing → Modeling → Eva
 
 ### Key Steps
 - **EDA** — Explored claim rates across all demographic and behavioral features
-- **Feature Selection** — Identified correlated and low-impact features
 - **Preprocessing** — StandardScaler + OneHotEncoder via ColumnTransformer
 - **Modeling** — Random Forest Classifier with Permutation Importance analysis
 - **Explanatory Analysis** — Deep dive into top predictive features
