@@ -1,1 +1,242 @@
+# 🚗 Car Insurance Claims Prediction
 
+![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
+![Sklearn](https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge&logo=scikit-learn)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+![Model](https://img.shields.io/badge/Best%20Model-Random%20Forest-darkgreen?style=for-the-badge)
+![Accuracy](https://img.shields.io/badge/Best%20Accuracy-84%25-brightgreen?style=for-the-badge)
+![Clustering](https://img.shields.io/badge/Feature%20Engineering-KMeans%20Clustering-yellow?style=for-the-badge)
+
+---
+
+## 🔍 Problem Statement
+
+Car insurance companies face significant financial risk when customers file unexpected claims.
+Accurate prediction of claim likelihood enables smarter premium pricing and better risk management.
+
+> **Goal:** Build a machine learning model that predicts whether a customer will file a car insurance claim —
+> enabling insurers to identify high-risk customers **before** losses occur.
+
+---
+
+## 🎯 Target Variable
+
+| Value | Meaning |
+|-------|---------|
+| `0` | Customer did NOT file a claim ✅ |
+| `1` | Customer filed a claim ❌ |
+
+**Claim Rate in Dataset: 31.33%**
+
+---
+
+## 📊 Dataset Overview
+
+| Property | Value |
+|----------|-------|
+| Rows | 10,000 customers |
+| Features | 18 input features + 1 target |
+| Task | Binary Classification |
+
+### Key Features
+
+| Feature | What it Represents | Business Impact |
+|---------|-------------------|----------------|
+| `DRIVING_EXPERIENCE` | Years of driving | Primary risk indicator |
+| `VEHICLE_OWNERSHIP` | Owner vs Non-owner | Financial stability & asset care |
+| `VEHICLE_YEAR` | Car's age | Modern cars have better safety tech |
+| `POSTAL_CODE` | Driving location | High-traffic areas increase risk |
+| `AGE` | Driver's age | Maturity directly affects risk-taking |
+| `SPEEDING_VIOLATIONS` | Traffic tickets | Direct measure of aggressive driving |
+| `PAST_ACCIDENTS` | Accident history | Best predictor for future claims |
+| `CREDIT_SCORE` | Financial score | Linked to responsibility |
+| `ANNUAL_MILEAGE` | Yearly distance | More road time = higher exposure |
+| `INCOME` | Annual salary | Socioeconomic context |
+
+---
+
+## ⚙️ Methodology — 3 Stage Pipeline
+
+```
+Part 1: Base Model
+Data Loading → EDA → Cleaning → Preprocessing → Random Forest → Permutation Importance
+
+Part 2: Feature Engineering + Clustering
+KMeans Clustering → Customer Segmentation → Engineered Model → Comparison
+
+Part 3: Feature Selection
+Embedded Method (SelectFromModel) → Optimized Final Model → Final Evaluation
+```
+
+---
+
+## 📈 Visualizations
+
+### Claim Distribution
+![Claim Distribution](images/3.png)
+
+### Categorical Features — Claim Rate
+![Categorical EDA](images/5.png)
+
+### Numerical Features vs Claim
+![Numerical EDA](images/4.png)
+
+### Explanatory Analysis 1 — Driving Experience
+![Driving Experience](images/1.png)
+
+### Explanatory Analysis 2 — Gender Risk Profile
+![Gender](images/2.png)
+
+### KMeans — Elbow Plot & Silhouette Scores
+![Elbow Plot](images/elbow_silhouette.png)
+
+### Cluster Feature Profiles
+![Cluster Profiles](images/cluster_profiles.png)
+
+### Top 10 Features — Final Permutation Importance
+![Final Permutation Importance](images/final_permutation_importance.png)
+
+---
+
+## 🔑 Key EDA Findings
+
+### 🚘 Driving Experience
+> Drivers with **0-9 years** of experience have a **62.8%** claim rate —
+> nearly **double** the average of 31.3%.
+> Expert drivers (30y+) have a claim rate of almost **0%**.
+
+### 👤 Gender
+> Male drivers: **36.3%** vs Female: **26.4%** — a **10% gap**.
+
+### 🏎️ Vehicle Year
+> Pre-2015 vehicles: **39.4%** vs Post-2015: **10.5%**.
+
+### 📚 Education & Income
+> No education + poverty level = highest risk groups (~45-65% claim rate).
+
+### 👶 Age
+> **16-25 year olds** have **70%+** claim rate — highest risk group.
+
+---
+
+## 🔵 Customer Segmentation — KMeans (K=3)
+
+Optimal K selected using **Elbow Plot** + **Silhouette Score** analysis.
+
+### Cluster Profiles
+
+| Cluster | Persona | Key Characteristics |
+|---------|---------|---------------------|
+| **Cluster 0** | 🔴 The Risky Professionals | High credit & wealth but highest speeding/DUI risk → Need higher premiums |
+| **Cluster 1** | 🟡 The Balanced Middle | Moderate in everything → Ideal for standard policies |
+| **Cluster 2** | 🟢 The Safe Commuters | Low credit & assets but very safe drivers despite high mileage → Good for "Safe Driver" discounts |
+
+> The cluster label was added as a new feature to improve the model's ability
+> to distinguish between complex driver behavior patterns.
+
+---
+
+## 🤖 Model Evolution — All 3 Stages
+
+### Comprehensive Metrics Comparison (Test Data)
+
+| Stage | Model Description | Accuracy | Recall (Class 1) | F1-Score (Class 1) |
+|-------|-----------------|----------|-----------------|-------------------|
+| **Part 1** | Base Model (Original Features) | 0.81 | 0.68 | 0.71 |
+| **Part 2** | Engineered Model (With Clusters) | **0.84** | **0.69** | **0.73** |
+| **Part 3** | Final Selected Model (Top Features) | 0.82 | 0.68 | 0.72 |
+
+### 📌 Verdict
+
+| Model | Best For |
+|-------|---------|
+| **Part 2** ✅ | Maximum accuracy — best overall performance |
+| **Part 3** ✅ | Production environment — efficient, fewer features, strong Recall |
+
+> Adding KMeans Cluster Labels boosted accuracy from **81% → 84%** (+3%)
+> and improved Recall from **0.68 → 0.69** and F1 from **0.71 → 0.73**.
+
+---
+
+## 🔑 Final Feature Importance — Top 10 (Permutation)
+
+| Rank | Feature | Business Impact |
+|------|---------|----------------|
+| 1 | `DRIVING_EXPERIENCE` | #1 risk indicator — less experience = much higher risk |
+| 2 | `VEHICLE_OWNERSHIP` | Owners are more responsible than renters |
+| 3 | `VEHICLE_YEAR` | Pre-2015 vehicles = 4x higher claim rate |
+| 4 | `POSTAL_CODE` | Location-based risk patterns |
+| 5 | `AGE` | Young drivers = highest risk group |
+| 6 | `SPEEDING_VIOLATIONS` | Direct behavioral risk signal |
+| 7 | `PAST_ACCIDENTS` | Strongest historical predictor |
+| 8 | `CREDIT_SCORE` | Financial responsibility indicator |
+| 9 | `ANNUAL_MILEAGE` | More miles = more exposure |
+| 10 | `INCOME` | Socioeconomic risk context |
+
+---
+
+## 💡 Business Recommendations
+
+### 1. 🎯 Experience-Based Premium Pricing
+> Drivers with **less than 10 years** of experience have **2x the average** claim rate.
+> Driving experience is the **#1 risk factor**.
+
+### 2. 🚗 Flag Pre-2015 Vehicle Owners
+> Pre-2015 vehicles show a **39.4%** claim rate vs **10.5%** for newer vehicles.
+> Apply higher risk premiums for older vehicles.
+
+### 3. 🔵 Use Cluster-Based Policies
+> The 3 customer personas enable targeted insurance products:
+> - Cluster 0 → Higher premiums for risky professionals
+> - Cluster 1 → Standard policies
+> - Cluster 2 → Safe driver discounts
+
+### 4. 👥 Build Behavioral Risk Profiles
+> `DRIVING_EXPERIENCE` + `VEHICLE_OWNERSHIP` + `PAST_ACCIDENTS` together
+> provide the strongest combined predictive signal.
+
+---
+
+## 🛠️ Tech Stack
+
+```python
+pandas • numpy • matplotlib • seaborn
+scikit-learn • KMeans Clustering • SelectFromModel
+```
+
+---
+
+## 📁 Project Structure
+
+```
+Car-Insurance-Claims-Prediction/
+│
+├── Projec_4_part_1.ipynb          ← Part 1: Base Model + EDA
+├── Projec_4_part_2.ipynb          ← Part 2: Clustering + Feature Selection
+├── README.md
+└── images/
+    ├── 1.png                      ← Driving Experience vs Claim Rate
+    ├── 2.png                      ← Gender vs Claim Rate
+    ├── 3.png                      ← Claim Distribution
+    ├── 4.png                      ← Numerical Features
+    ├── 5.png                      ← Categorical Claim Rates
+    ├── elbow_silhouette.png       ← KMeans Elbow + Silhouette
+    ├── cluster_profiles.png       ← Cluster Feature Profiles
+    └── final_permutation_importance.png
+```
+
+---
+
+## 🚀 How to Run
+
+```bash
+git clone https://github.com/dohaalnabahin/Car-Insurance-Claims-Prediction
+```
+
+Open notebooks in order:
+1. `Projec_4_part_1.ipynb` — Base model & EDA
+2. `Projec_4_part_2.ipynb` — Feature engineering & final model
+
+---
+
+*Built with ❤️ as part of a Data Science learning journey*
