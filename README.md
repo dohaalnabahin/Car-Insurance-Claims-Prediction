@@ -220,9 +220,9 @@ Car-Insurance-Claims-Prediction/
     ├── 3.png                      ← Claim Distribution
     ├── 4.png                      ← Numerical Features
     ├── 5.png                      ← Categorical Claim Rates
-    ├── elbow_silhouette.png       ← KMeans Elbow + Silhouette
-    ├── cluster_profiles.png       ← Cluster Feature Profiles
-    └── final_permutation_importance.png
+    ├── elbow.png                  ← KMeans Elbow + Silhouette
+    ├── profile.png                ← Cluster Feature Profiles
+    └── finall.png                 ← Final Permutation Importance
 ```
 
 ---
