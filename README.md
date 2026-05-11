@@ -73,28 +73,28 @@ Embedded Method (SelectFromModel) → Optimized Final Model → Final Evaluation
 ## 📈 Visualizations
 
 ### Claim Distribution
-![Claim Distribution](images/3.png)
+![Claim Distribution](3.png)
 
 ### Categorical Features — Claim Rate
-![Categorical EDA](images/5.png)
+![Categorical EDA](5.png)
 
 ### Numerical Features vs Claim
-![Numerical EDA](images/4.png)
+![Numerical EDA](4.png)
 
 ### Explanatory Analysis 1 — Driving Experience
-![Driving Experience](images/1.png)
+![Driving Experience](1.png)
 
 ### Explanatory Analysis 2 — Gender Risk Profile
-![Gender](images/2.png)
+![Gender](2.png)
 
 ### KMeans — Elbow Plot & Silhouette Scores
-![Elbow Plot](images/elbow_silhouette.png)
+![Elbow Plot](elbow.png)
 
 ### Cluster Feature Profiles
-![Cluster Profiles](images/cluster_profiles.png)
+![Cluster Profiles](profile.png)
 
 ### Top 10 Features — Final Permutation Importance
-![Final Permutation Importance](images/final_permutation_importance.png)
+![Final Permutation Importance](finall.png)
 
 ---
 
