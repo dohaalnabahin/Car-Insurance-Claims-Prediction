@@ -162,9 +162,7 @@ Optimal K selected using **Elbow Plot** + **Silhouette Score** analysis.
 | **Part 4 (B)**| NN + Class Weights ✅ | **0.83** | **0.82** 🏆 | **0.75** 🏆 | **138** 🏆 |
 | **Part 4 (C)**| Tuned NN + Class Weights | 0.83 | **0.82** 🏆 | 0.74 | 140 |
 
-> **Hyperparameter Tuning Note:** Using `keras_tuner` for automated search (optimizing layers, dropout, and learning rates) confirmed that the architecture stabilized around 82-83% accuracy and 83% recall, ensuring model robustness against overfitting.
->
-> 
+
 ### 📌 Verdict
 
 | Model | Best For | Business Justification |
