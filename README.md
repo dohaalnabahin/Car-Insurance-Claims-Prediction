@@ -162,7 +162,8 @@ Optimal K selected using **Elbow Plot** + **Silhouette Score** analysis.
 | **Part 4 (B)**| NN + Class Weights ✅ | **0.83** | **0.82** 🏆 | **0.75** 🏆 | **138** 🏆 |
 | **Part 4 (C)**| Tuned NN + Class Weights | 0.83 | **0.82** 🏆 | 0.74 | 140 |
 
-
+> 📊 **Note on Feature Engineering:** Adding KMeans Cluster Labels was the key to maximizing overall performance in Part 2, boosting accuracy from **81% → 84%** (+3%), while improving Recall from **0.68 → 0.69** and F1-Score from **0.71 → 0.73**.
+> 
 ### 📌 Verdict
 
 | Model | Best For | Business Justification |
