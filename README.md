@@ -1,10 +1,10 @@
 # 🚗 Car Insurance Claims Prediction
 
-![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
-![Sklearn](https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge&logo=scikit-learn)
-![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
-![Model](https://img.shields.io/badge/Best%20Model-Random%20Forest-darkgreen?style=for-the-badge)
-![Accuracy](https://img.shields.io/badge/Best%20Accuracy-84%25-brightgreen?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python) 
+![Sklearn](https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge&logo=scikit-learn) 
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge) 
+![Model](https://shields.io) 
+![Accuracy](https://shields.io) 
 ![Clustering](https://img.shields.io/badge/Feature%20Engineering-KMeans%20Clustering-yellow?style=for-the-badge)
 
 ---
