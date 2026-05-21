@@ -66,6 +66,10 @@ KMeans Clustering → Customer Segmentation → Engineered Model → Comparison
 
 Part 3: Feature Selection
 Embedded Method (SelectFromModel) → Optimized Final Model → Final Evaluation
+
+
+Part 4: Deep Learning & Handling Imbalance
+Neural Network Base → Imbalance Handling (Class Weights) → Hyperparameter Tuning (Keras Tuner)
 ```
 
 ---
@@ -95,6 +99,15 @@ Embedded Method (SelectFromModel) → Optimized Final Model → Final Evaluation
 
 ### Top 10 Features — Final Permutation Importance
 ![Final Permutation Importance](finall.png)
+
+### Neural Network Baseline Performance
+![NN Baseline](images/nn_baseline.png)
+
+### Performance After Handling Imbalance (Class Weights)
+![NN Class Weights](images/nn_class_weights.png)
+
+### Final Tuned Model Performance & Comparison Matrix
+![Final Tuned Model Comparison](images/nn_tuned_comparison_matrix.png)
 
 ---
 
@@ -145,17 +158,26 @@ Optimal K selected using **Elbow Plot** + **Silhouette Score** analysis.
 | **Part 1** | Base Model (Original Features) | 0.81 | 0.68 | 0.71 |
 | **Part 2** | Engineered Model (With Clusters) | **0.84** | **0.69** | **0.73** |
 | **Part 3** | Final Selected Model (Top Features) | 0.82 | 0.68 | 0.72 |
+| **Part 4 (A)**| NN Baseline (1 Hidden Layer) | **0.84** | 0.71 | 0.73 | 241 |
+| **Part 4 (B)**| NN + Class Weights ✅ | 0.83 | **0.84** | **0.75** | **127** |
+| **Part 4 (C)**| Tuned NN + Class Weights | 0.82 | 0.83 | **0.75** | 129 |
 
+> **Hyperparameter Tuning Note:** Using `keras_tuner` for automated search (optimizing layers, dropout, and learning rates) confirmed that the architecture stabilized around 82-83% accuracy and 83% recall, ensuring model robustness against overfitting.
+>
+> 
 ### 📌 Verdict
 
-| Model | Best For |
-|-------|---------|
-| **Part 2** ✅ | Maximum accuracy — best overall performance |
-| **Part 3** ✅ | Production environment — efficient, fewer features, strong Recall |
+| Model | Best For | Business Justification |
+|-------|---------|------------------------|
+| **Model 2 (Part 2)** | Maximum Accuracy | Best overall performance if dataset balance is not a priority. |
+| **Model 4 (Part 4-B)** ✅ | **Production & Risk Mitigation** | **The Absolute Winner.** By utilizing Neural Networks with `compute_class_weight`, the Recall jumped from **71% to 84%**, cutting missed high-risk customers nearly in half (from 241 down to 127). |
+
 
 > Adding KMeans Cluster Labels boosted accuracy from **81% → 84%** (+3%)
 > and improved Recall from **0.68 → 0.69** and F1 from **0.71 → 0.73**.
-> 
+
+> > **Hyperparameter Tuning Note:** Using `keras_tuner` for automated search (optimizing layers, dropout, and learning rates) confirmed that the architecture stabilized around 82-83% accuracy and 83% recall, ensuring model robustness against overfitting.
+ 
 ---
 
 ## 🔑 Final Feature Importance — Top 10 (Permutation)
@@ -177,23 +199,14 @@ Optimal K selected using **Elbow Plot** + **Silhouette Score** analysis.
 
 ## 💡 Business Recommendations
 
-### 1. 🎯 Experience-Based Premium Pricing
-> Drivers with **less than 10 years** of experience have **2x the average** claim rate.
-> Driving experience is the **#1 risk factor**.
+### 1. 🎯 Prioritize Recall to Minimize Financial Loss
+> Missed high-risk customers (False Negatives) cost the company significantly. Moving to the **Neural Network with Class Weights** reduced missed claims by **47%** (from 241 to 127), providing superior financial protection.
 
-### 2. 🚗 Flag Pre-2015 Vehicle Owners
-> Pre-2015 vehicles show a **39.4%** claim rate vs **10.5%** for newer vehicles.
-> Apply higher risk premiums for older vehicles.
+### 2. ⚖️ Accept the Trade-off of False Alarms
+> Applying class weights increased False Positives (predicting a claim when there isn't one) to 298. This is an expected and safe business cost, as the cost of a missed claim is exponentially higher than the cost of additional inspection.
 
-### 3. 🔵 Use Cluster-Based Policies
-> The 3 customer personas enable targeted insurance products:
-> - Cluster 0 → Higher premiums for risky professionals
-> - Cluster 1 → Standard policies
-> - Cluster 2 → Safe driver discounts
-
-### 4. 👥 Build Behavioral Risk Profiles
-> `DRIVING_EXPERIENCE` + `VEHICLE_OWNERSHIP` + `PAST_ACCIDENTS` together
-> provide the strongest combined predictive signal.
+### 3. 🚗 Flag Pre-2015 Vehicle Owners & Low Experience
+> Drivers with **less than 10 years** of experience and older vehicles remain the highest statistical risk groups.
 
 ---
 
@@ -202,6 +215,20 @@ Optimal K selected using **Elbow Plot** + **Silhouette Score** analysis.
 ```python
 pandas • numpy • matplotlib • seaborn
 scikit-learn • KMeans Clustering • SelectFromModel
+tensorflow • keras • keras-tuner
+
+---
+
+## 📁 Project Structure
+
+```
+## 🛠️ Tech Stack
+
+```python
+pandas • numpy • matplotlib • seaborn
+scikit-learn • KMeans Clustering • SelectFromModel
+tensorflow • keras • keras-tuner
+
 ```
 
 ---
@@ -212,7 +239,8 @@ scikit-learn • KMeans Clustering • SelectFromModel
 Car-Insurance-Claims-Prediction/
 │
 ├── Projec_4_part_1.ipynb          ← Part 1: Base Model + EDA
-├── Projec_4_part_2.ipynb          ← Part 2: Clustering + Feature Selection
+├── Projec_4_part_2.ipynb          ← Part 2 & 3: Clustering + Feature Selection
+├── Projec_4_part_3.ipynb          ← Part 4: Deep Learning + Tuning + Imbalance
 ├── README.md
 └── images/
     ├── 1.png                      ← Driving Experience vs Claim Rate
@@ -222,9 +250,14 @@ Car-Insurance-Claims-Prediction/
     ├── 5.png                      ← Categorical Claim Rates
     ├── elbow.png                  ← KMeans Elbow + Silhouette
     ├── profile.png                ← Cluster Feature Profiles
-    └── finall.png                 ← Final Permutation Importance
-```
+    ├── finall.png                 ← Final Permutation Importance
+    ├── finall.png                 ← Final Permutation Importance
+    ├── finall.png                      ← Final Permutation Importance
+    ├── nn_baseline.png                 ← NN Baseline Performance
+    ├── nn_class_weights.png            ← NN Performance with Class Weights
+    └── nn_tuned_comparison_matrix.png  ← Final Tuned Model + Class Weights Comparison Matrix  
 
+```
 ---
 
 ## 🚀 How to Run
@@ -235,8 +268,8 @@ git clone https://github.com/dohaalnabahin/Car-Insurance-Claims-Prediction
 
 Open notebooks in order:
 1. `Projec_4_part_1.ipynb` — Base model & EDA
-2. `Projec_4_part_2.ipynb` — Feature engineering & final model
-
+2. `Projec_4_part_2.ipynb` — Feature Engineering & Feature Selection
+3. `Projec_4_part_3.ipynb` — Deep Learning, Imbalance Handling & Tuning
 ---
 
 *Built with ❤️ as part of a Data Science learning journey*
