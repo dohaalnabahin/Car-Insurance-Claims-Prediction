@@ -153,14 +153,14 @@ Optimal K selected using **Elbow Plot** + **Silhouette Score** analysis.
 
 ### Comprehensive Metrics Comparison (Test Data)
 
-| Stage | Model Description | Accuracy | Recall (Class 1) | F1-Score (Class 1) |
-|-------|-----------------|----------|-----------------|-------------------|
-| **Part 1** | Base Model (Original Features) | 0.81 | 0.68 | 0.71 |
-| **Part 2** | Engineered Model (With Clusters) | **0.84** | **0.69** | **0.73** |
-| **Part 3** | Final Selected Model (Top Features) | 0.82 | 0.68 | 0.72 |
-| **Part 4 (A)**| NN Baseline (1 Hidden Layer) | **0.84** | 0.71 | 0.73 | 241 |
-| **Part 4 (B)**| NN + Class Weights ✅ | 0.83 | **0.84** | **0.75** | **127** |
-| **Part 4 (C)**| Tuned NN + Class Weights | 0.82 | 0.83 | **0.75** | 129 |
+| Stage | Model Description | Accuracy | Recall (Class 1) | F1-Score (Class 1) | Missed Claims (FN) |
+|-------|-----------------|:----------:|:-----------------:|:-------------------:|:------------------:|
+| **Part 1** | Base Model (Original Features) | 0.81 | 0.68 | 0.71 | - |
+| **Part 2** | Engineered Model (With Clusters) | **0.84** | 0.69 | 0.73 | - |
+| **Part 3** | Final Selected Model (Top Features) | 0.82 | 0.68 | 0.72 | - |
+| **Part 4 (A)**| NN Baseline (Stable Seed) | 0.83 | 0.70 | 0.73 | 232 |
+| **Part 4 (B)**| NN + Class Weights ✅ | **0.83** | **0.82** 🏆 | **0.75** 🏆 | **138** 🏆 |
+| **Part 4 (C)**| Tuned NN + Class Weights | 0.83 | **0.82** 🏆 | 0.74 | 140 |
 
 > **Hyperparameter Tuning Note:** Using `keras_tuner` for automated search (optimizing layers, dropout, and learning rates) confirmed that the architecture stabilized around 82-83% accuracy and 83% recall, ensuring model robustness against overfitting.
 >
@@ -169,8 +169,8 @@ Optimal K selected using **Elbow Plot** + **Silhouette Score** analysis.
 
 | Model | Best For | Business Justification |
 |-------|---------|------------------------|
-| **Model 2 (Part 2)** | Maximum Accuracy | Best overall performance if dataset balance is not a priority. |
-| **Model 4 (Part 4-B)** ✅ | **Production & Risk Mitigation** | **The Absolute Winner.** By utilizing Neural Networks with `compute_class_weight`, the Recall jumped from **71% to 84%**, cutting missed high-risk customers nearly in half (from 241 down to 127). |
+| **Model 2 (Part 2)** | Maximum Accuracy | Best overall performance (84% Accuracy) if dataset balance is not a priority. |
+| **Model 4 (Part 4-B)** ✅ | **Production & Risk Mitigation** | **The Absolute Winner.** By utilizing Neural Networks with `compute_class_weight`, the Recall jumped from **70% to 82%**, reducing missed high-risk customers from 232 down to **138**. |
 
 
 > Adding KMeans Cluster Labels boosted accuracy from **81% → 84%** (+3%)
