@@ -101,13 +101,13 @@ Neural Network Base → Imbalance Handling (Class Weights) → Hyperparameter Tu
 ![Final Permutation Importance](finall.png)
 
 ### Neural Network Baseline Performance
-![NN Baseline](images/nn_baseline.png)
+![NN Baseline](nn_baseline.png)
 
 ### Performance After Handling Imbalance (Class Weights)
-![NN Class Weights](images/nn_class_weights.png)
+![NN Class Weights](nn_class_weights.png)
 
 ### Final Tuned Model Performance & Comparison Matrix
-![Final Tuned Model Comparison](images/nn_tuned_comparison_matrix.png)
+![Final Tuned Model Comparison](nn_tuned_comparison_matrix.png)
 
 ---
 
