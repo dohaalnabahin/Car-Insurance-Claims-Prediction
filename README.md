@@ -195,13 +195,13 @@ Optimal K selected using **Elbow Plot** + **Silhouette Score** analysis.
 ## 💡 Business Recommendations
 
 ### 1. 🎯 Prioritize Recall to Minimize Financial Loss
-> Missed high-risk customers (False Negatives) cost the company significantly. Moving to the **Neural Network with Class Weights** reduced missed claims by **47%** (from 241 to 127), providing superior financial protection.
+Missed high-risk customers cost the company significantly. Moving to the **Neural Network with Class Weights** reduced missed claims from 232 down to **138**, saving **94 high-risk losses** from going unnoticed.
 
 ### 2. ⚖️ Accept the Trade-off of False Alarms
-> Applying class weights increased False Positives (predicting a claim when there isn't one) to 298. This is an expected and safe business cost, as the cost of a missed claim is exponentially higher than the cost of additional inspection.
+Applying class weights increased False Positives (predicting a claim when there isn't one) to 285. This is an expected and safe cost, as implementing minor premium adjustments or proactive checks is cheaper than paying out an unexpected claim.
 
-### 3. 🚗 Flag Pre-2015 Vehicle Owners & Low Experience
-> Drivers with **less than 10 years** of experience and older vehicles remain the highest statistical risk groups.
+### 🚗 3. Flag Pre-2015 Vehicle Owners & Low Experience
+Drivers with **less than 10 years** of experience combined with older vehicles remain the highest statistical risk profiles and should be targeted for dynamic premium calibration.
 
 ---
 
