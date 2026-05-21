@@ -240,8 +240,6 @@ Car-Insurance-Claims-Prediction/
     ├── elbow.png                  ← KMeans Elbow + Silhouette
     ├── profile.png                ← Cluster Feature Profiles
     ├── finall.png                 ← Final Permutation Importance
-    ├── finall.png                 ← Final Permutation Importance
-    ├── finall.png                      ← Final Permutation Importance
     ├── nn_baseline.png                 ← NN Baseline Performance
     ├── nn_class_weights.png            ← NN Performance with Class Weights
     └── nn_tuned_comparison_matrix.png  ← Final Tuned Model + Class Weights Comparison Matrix  
