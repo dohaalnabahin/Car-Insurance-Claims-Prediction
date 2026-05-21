@@ -170,7 +170,6 @@ Optimal K selected using **Elbow Plot** + **Silhouette Score** analysis.
 | **Model 2 (Part 2)** | Maximum Accuracy | Best overall performance (84% Accuracy) if dataset balance is not a priority. |
 | **Model 4 (Part 4-B)** ✅ | **Production & Risk Mitigation** | **The Absolute Winner.** By utilizing Neural Networks with `compute_class_weight`, the Recall jumped from **70% to 82%**, reducing missed high-risk customers from 232 down to **138**. |
 
-
 > Adding KMeans Cluster Labels boosted accuracy from **81% → 84%** (+3%)
 > and improved Recall from **0.68 → 0.69** and F1 from **0.71 → 0.73**.
 
