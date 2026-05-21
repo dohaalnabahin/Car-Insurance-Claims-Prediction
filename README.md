@@ -210,17 +210,6 @@ Optimal K selected using **Elbow Plot** + **Silhouette Score** analysis.
 
 ---
 
-## 🛠️ Tech Stack
-
-```python
-pandas • numpy • matplotlib • seaborn
-scikit-learn • KMeans Clustering • SelectFromModel
-tensorflow • keras • keras-tuner
-
----
-
-## 📁 Project Structure
-
 ```
 ## 🛠️ Tech Stack
 
