@@ -1,11 +1,13 @@
 # 🚗 Car Insurance Claims Prediction
 
-![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python) 
-![Sklearn](https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge&logo=scikit-learn) 
-![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge) 
-![Model](https://shields.io) 
-![Accuracy](https://shields.io) 
-![Clustering](https://img.shields.io/badge/Feature%20Engineering-KMeans%20Clustering-yellow?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
+![Sklearn](https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge&logo=scikit-learn)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-Keras-FF6F00?style=for-the-badge&logo=tensorflow)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+![Model](https://img.shields.io/badge/Model-Random%20Forest%20%2B%20Neural%20Network-purple?style=for-the-badge)
+![Best Accuracy](https://img.shields.io/badge/Best%20Accuracy-84%25-brightgreen?style=for-the-badge)
+![Recall](https://img.shields.io/badge/Best%20Recall-82%25-red?style=for-the-badge)
+![Feature Engineering](https://img.shields.io/badge/Feature%20Engineering-KMeans%20Clustering-yellow?style=for-the-badge)
 
 ---
 
@@ -249,9 +251,9 @@ git clone https://github.com/dohaalnabahin/Car-Insurance-Claims-Prediction
 ```
 
 Open notebooks in order:
-1. `Projec_4_part_1.ipynb` — Base model & EDA
-2. `Projec_4_part_2.ipynb` — Feature Engineering & Feature Selection
-3. `Projec_4_part_3.ipynb` — Deep Learning, Imbalance Handling & Tuning
+1. `Project_4_part_1.ipynb` — Base model & EDA
+2. `Project_4_part_2.ipynb` — Feature Engineering & Feature Selection
+3. `Project_4_part_3.ipynb` — Deep Learning, Imbalance Handling & Tuning
 ---
 
 *Built with ❤️ as part of a Data Science learning journey*
